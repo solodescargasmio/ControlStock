@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:dist="http://schemas.android.com/apk/distribution"
+    package="com.produccion.stockmeuresis">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <dist:module dist:instant="true" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".CsvASqlite"></activity>
+        <activity
+            android:name=".Producto_Nuevo"
+            android:label="@string/title_activity_producto__nuevo"
+            android:parentActivityName=".ListaProductos"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.produccion.stockmeuresis.ListaProductos" />
+        </activity>
+        <activity
+            android:name=".Cargar_Cantidad"
+            android:label="@string/title_activity_cargar__cantidad"
+            android:parentActivityName=".ListaProductos"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".List_Prod" />
+        <activity
+            android:name=".ListaProductos"
+            android:parentActivityName=".MainActivity"
+            android:windowSoftInputMode="adjustNothing"/>
+        <activity
+            android:name=".ActivityCargaArchivo"
+            android:label="@string/title_activity_carga_archivo"
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
